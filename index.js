@@ -13,10 +13,11 @@ const birthdayArray = [ // Тут типа даты
 	{ date: '02-01', userId: '853367711040143410', name: 's1nlef' }, // Lucas_Paradise
 ]
 const currentDate = new Date().toISOString().slice(5, 10)
-
+// я хочу спать
 function compareDates(date1, date2) {
 	return date1 === date2
 }
+// функция проверки
 function checkBirthdays() {
 	for (const birthday of birthdayArray) {
 		if (compareDates(birthday.date, currentDate)) {
@@ -32,7 +33,7 @@ function checkBirthdays() {
 client.on('ready', () => {
 	console.log(`Бот ${client.user.tag} готов!`)
 	checkBirthdays()
-	setInterval(checkBirthdays, 24 * 60 * 60 * 1000) // 24 * 60 * 60 * 1000 = 86400000 ms
+	setInterval(checkBirthdays, 24 * 60 * 60 * 1000) // 24 * 60 * 60 * 1000 = 86400000 ms повторяет функцию раз в сутки
 })
 
 client.login(process.env.TOKEN)
